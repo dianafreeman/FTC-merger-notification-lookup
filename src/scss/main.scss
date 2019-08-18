@@ -1,0 +1,68 @@
+$primary: #88c2e7;
+$secondary: #1e1330;
+$info: #7b7797;
+$success: #5eb57d;
+$warning: #dba545;
+$danger: #f44336;
+
+.text-secondary {
+    color: $secondary !important
+}
+
+body {
+    background-color: $primary !important;
+}
+
+.masthead {
+    margin: 1em .5em;
+    padding: 1em;
+    border-radius: 20px;
+    background: rgba(225, 225, 225, 0.7);
+    border: 1px solid white;
+
+    .ftc-logo {
+        border-radius: 100%;
+        float: left;
+        margin: 0 1em;
+    }
+
+}
+
+.search-form {
+    position: relative;
+    width: 100%;
+    input {
+        width: 75%;
+    }
+    .fixed-width-btn-container{
+        width: 100%;
+        margin-top: 1em;
+    }
+    @media screen and (min-width: 768px) {
+    display: inline-flex;
+        label {
+            width: 25%;
+        }
+
+        input {
+            width: 50%;
+        }
+
+        .fixed-width-btn-container {
+            width: 25%;
+            margin: unset;
+        }
+    }
+
+
+}
+
+.white-text {
+    color: lightgray;
+}
+
+.hidden-btn-text {
+    width: 100%;
+    text-align: center;
+    font-size: 0.75em;
+}

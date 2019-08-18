@@ -1,7 +1,22 @@
 {
-  "name": "ascent-reg-tech-demo",
+  "name": "FTC-merger-notification-lookup",
   "version": "0.1.0",
   "private": true,
+  "main": "src/index.jsx",
+  "scripts": {
+    "test": "NODE_ENV=testing ./node_modules/.bin/mocha tests/index.js --watch --require @babel/register tests/setup.js",
+    "server": "npx @babel/node --require @babel/register server.js",
+    "dev": "grunt"
+  },
+  "browserslist": [
+    "last 1 version",
+    "> 1%",
+    "maintained node versions",
+    "not dead"
+  ],
+  "author": "Diana M. Stealkey-Freeman",
+  "license": "ISC",
+  "description": "An Early Termination Notice lookup that can be used to search for business mergers whose",
   "dependencies": {
     "@babel/polyfill": "^7.4.4",
     "body-parser": "^1.19.0",
@@ -11,6 +26,7 @@
     "node-fetch": "^2.6.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
+    "react-bootstrap": "^1.0.0-beta.11",
     "react-dom": "^16.8.6"
   },
   "devDependencies": {
@@ -48,20 +64,5 @@
     "mocha": "^6.1.4",
     "node-sass": "^4.8.3",
     "pixrem": "^5.0.0"
-  },
-  "main": "src/index.jsx",
-  "scripts": {
-    "test": "NODE_ENV=testing ./node_modules/.bin/mocha tests/index.js --watch --require @babel/register tests/setup.js",
-    "server": "npx @babel/node --require @babel/register server.js",
-    "dev": "grunt"
-  },
-  "browserslist": [
-    "last 1 version",
-    "> 1%",
-    "maintained node versions",
-    "not dead"
-  ],
-  "author": "",
-  "license": "ISC",
-  "description": ""
+  }
 }

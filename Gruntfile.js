@@ -10,16 +10,6 @@ module.exports = function (grunt) {
             },
             target: ['Gruntfile.js', 'src/*.jsx'],
       },
-      reload: {
-        port: 3001,
-        proxy: {
-            host: 'localhost'
-        },
-        watch:{
-            files:['dist/main.js'],
-            tasks:'default reload'
-        }
-    },
         sass: {
             dist: {
                 options: {
