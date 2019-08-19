@@ -1,7 +1,7 @@
 # FTC Early [Merger Clearance] Nofitication Lookup
 ### ⚠️ Disclaimer ⚠️
 
-This app includes summaries of what I believe to be the general gist of FTC guidance on the terminology and concepts related to the [Early Notifications API](https://www.ftc.gov/developer/api/v0/endpoints/hsr-early-termination-notices). I read  [this page,](https://www.ftc.gov/enforcement/premerger-notification-program) [this page](https://www.ftc.gov/enforcement/premerger-notification-program/early-termination-notices/about-early-termination-notices), and [this blog post](https://www.ftc.gov/news-events/blogs/competition-matters/2017/08/getting-sync-hsr-timing-considerations). I have exactly *NO* legal training, and I did not do any legally viable verification of these summaries. **Trust/interpret summaries with caution** -- this is a purely a development demonstration. 
+This app includes summaries of what I believe to be the general gist of FTC guidance on the terminology and concepts related to the [Early Notifications API](https://www.ftc.gov/developer/api/v0/endpoints/hsr-early-termination-notices). I read  [this page,](https://www.ftc.gov/enforcement/premerger-notification-program) [this page](https://www.ftc.gov/enforcement/premerger-notification-program/early-termination-notices/about-early-termination-notices), and [this blog post](https://www.ftc.gov/news-events/blogs/competition-matters/2017/08/getting-sync-hsr-timing-considerations). I have exactly *NO* legal training, and I did not do any legally viable verification of these summaries. **Trust/interpret summaries with caution** -- this is purely a development demonstration using React and Express. 
 
 ![screenshot](./screenshot.png)
 
@@ -46,15 +46,11 @@ npm run server
 
 **Checkpoint!**  Open Postman, or any other API testing environment, and navigate to `http:/localhost:9000/data`. You should get a JSON response. 
 
-
-
 **To run the server and launch the app in one fell swoop,** you can run 
 
 ```
 npm run everything
 ```
-
-
 
 ## Automated Tests
 
@@ -84,30 +80,30 @@ These tests focus on the API proxy for the FTC API. It includes a test-of-a-test
 
 ```
 -- dist  					  // Build Directory -- static target for Express Router
-		- index.html   	// main browser file
-		- main.css    	// main style file
-		- main.js   	  // main script file
+		- index.html  					  // main browser file
+		- main.css  					  // main style file
+		- main.js  					  // main script file
 		
--- src						  // Dev Directory
-		-- components   // React Components that change with app State
-		-- elements 		// Styled Components
-		-- scss					// Declared Styles
-		- index.js      // Where the Magic happens (jk. The main script)
+-- src  					  // Dev Directory
+		-- components  					  // React Components that change with app State
+		-- elements  					  // Styled Components
+		-- scss  					  // Declared Styles
+		- index.js  					  // Where the Magic happens (jk. The main script)
 		
--- test						  // Test Directory
-	-- index.js       // test the testing feature
-	-- NoticeObj.spec.js // What each response array object should
-	-- server.spec.js // tests server calls for good measure
-	-- setup 					// stop mocha from yelling about React Components
+-- test  					  // Test Directory
+	-- index.js  					  // test the testing feature
+	-- NoticeObj.spec.js  					  // What each response array object should
+	-- server.spec.js  					  // tests server calls for good measure
+	-- setup  					  // stop mocha from yelling about React Components
 	
--.babelrc						// Babel Config
--.env/.envexample		// Key Config
--.gitignore 
--.eslintrc.js 			// EsLint Config
+-.babelrc  					  // Babel Config
+-.env/.envexample  					  // Key Config
+-.gitignore   					  // Git Ignore
+-.eslintrc.js  					  // EsLint Config
 - Gruntfile.js 			// Grunt Config
-- package.json
+- package.json  					  // NPM config
 - server.js 				// Server for API Proxy 	
-- README.md
+- README.md  					  // This thing you're reading
 ```
 
 
