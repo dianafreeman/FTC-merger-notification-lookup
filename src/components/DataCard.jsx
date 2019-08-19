@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Card, Button } from 'react-bootstrap';
 
 const DataCard = ({ target }) => (
-  <Card className="mb-4">
+  <Card className="mb-4 text-left">
     <Card.Header>
       {`Merger No. ${target.attributes['transaction-number']}`}
     </Card.Header>
@@ -14,7 +14,7 @@ const DataCard = ({ target }) => (
         }`}
       </Card.Title>
       <Card.Text>
-          The aquired entity/entities\:
+          Aquired entity/entities:
         {`${'    '}${target.attributes['acquired-entities']}`}
       </Card.Text>
       <Button variant="info" href={target.links.self}>

@@ -20,7 +20,7 @@ const SearchForm = ({ onSubmitClick, searchInput, onInputChange }) => {
   return (
     <Form>
       <MainForm className="search-form">
-        <InputLabel className="input-label">Keyword to Search</InputLabel>
+        <InputLabel className="input-label">Keyword to search:</InputLabel>
         <FormInput
           type="text"
           placeholder="e.g. 'Blockbuster' "

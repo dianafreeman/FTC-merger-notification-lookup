@@ -89,6 +89,8 @@ class App extends Component {
                   the transaction.`}
                 {'  '}
                 {'Either party can request Early Termination of the up-to-90-day waiting period that must otherwise expire before the parties can complete the merger.'}
+                {'  '}
+                {'The notices listed below are the most recent Early Termination notices released by the FTC. To search search the entire database by keyword, type a search term in the box below.  '}
               </blockquote>
             </Masthead>
           </Row>

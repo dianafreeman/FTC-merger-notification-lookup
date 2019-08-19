@@ -1,7 +1,7 @@
 # FTC Early [Merger Clearance] Nofitication Lookup
 ####⚠️ Disclaimer ⚠️
 
-This app includes summaries of what I believe to be the general gist of FTC guidance on the terminology and concepts related to the [Early Notifications API](https://www.ftc.gov/developer/api/v0/endpoints/hsr-early-termination-notices). I read at [this page,](https://www.ftc.gov/enforcement/premerger-notification-program) [this page](https://www.ftc.gov/enforcement/premerger-notification-program/early-termination-notices/about-early-termination-notices), and [this blog post](https://www.ftc.gov/news-events/blogs/competition-matters/2017/08/getting-sync-hsr-timing-considerations). I have exactly *NO* legal training, and I did not do any legally viable verification of these summaries. **Trust/interpret summaries with caution** -- this is a purely a development demonstration.
+This app includes summaries of what I believe to be the general gist of FTC guidance on the terminology and concepts related to the [Early Notifications API](https://www.ftc.gov/developer/api/v0/endpoints/hsr-early-termination-notices). I read at [this page,](https://www.ftc.gov/enforcement/premerger-notification-program) [this page](https://www.ftc.gov/enforcement/premerger-notification-program/early-termination-notices/about-early-termination-notices), and [this blog post](https://www.ftc.gov/news-events/blogs/competition-matters/2017/08/getting-sync-hsr-timing-considerations). I have exactly *NO* legal training, and I did not do any legally viable verification of these summaries. **Trust/interpret summaries with caution** -- this is a purely a development demonstration. 
 
 
 ## Getting Started
@@ -22,7 +22,13 @@ to create your own .env file to store your keys. Then, replace the values as nee
 
 ### Installing
 
-First, install dependencies in your local environment.
+First, download or clone this repository: 
+
+```
+git clone git@github.com:dianafreeman/FTC-merger-notification-lookup.git 
+```
+
+Then, install dependencies: 
 
 ```
 npm i 
@@ -34,17 +40,17 @@ To run the API server, execute the command
 npm run server
 ```
 
-**Checkpoint, if you're a hero!** Open Postman, or any other API testing environment, and navigate to `http:/localhost:9000/data`. You should get a JSON response. 
+**Checkpoint!**  Open Postman, or any other API testing environment, and navigate to `http:/localhost:9000/data`. You should get a JSON response. 
 
 
 
-To run the server and launch the app in one fell swoop, you can run 
+**To run the server and launch the app in one fell swoop,** you can run 
 
 ```
 npm run everything
 ```
 
-**Checkpoint!** Open Postman, or any other API testing environment, and navigate to `http:/localhost:9000/data`. You should get a JSON response. 
+
 
 ## Automated Tests
 
