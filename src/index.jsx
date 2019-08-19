@@ -1,30 +1,16 @@
-/* eslint-disable react/prop-types */
 /* eslint-disable import/extensions */
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import {
   Container, Row, Col, Card, Spinner,
 } from 'react-bootstrap';
-import styled from 'styled-components';
+import {
+  Masthead, Logo, AsideTitle, AsideCard, ReferenceLink, InfoText,
+} from './elements/index.jsx';
 import DataCard from './components/DataCard.jsx';
-import SearchForm from './components/SearchForm.jsx';
 import FixedHeightContainer from './components/FixedHeightContainer.jsx';
+import SearchForm from './components/SearchForm.jsx';
 
-const Masthead = styled(Col)`
-    margin: 1em .5em;
-    padding: 1em;
-    border-radius: 20px;
-    background: rgba(225, 225, 225, 0.7);
-    border: 1px solid white;
-`;
-const Logo = styled.img`
-    border-radius: 100%;
-    float: left;
-    margin: 0 1em;
-`;
-const AsideTitle = styled.h3`
-  font-size: 24px;
-`;
 class App extends Component {
   constructor() {
     super();
@@ -86,7 +72,7 @@ class App extends Component {
     } = this.state;
     return (
       <main>
-        <Container fluid>
+        <Container>
           <Row>
             <Masthead sm={12}>
               <Logo
@@ -114,6 +100,9 @@ class App extends Component {
                   searchInput={searchInput}
                   onInputChange={this.onInputChange}
                 />
+                <InfoText>
+                  {`Showing ${data.length.toString()} results`}
+                </InfoText>
                 <FixedHeightContainer length={data.length}>
                   {isLoading ? <Spinner animation="grow" size="lg" /> : null}
                   {error.length > 0 ? (
@@ -130,17 +119,28 @@ class App extends Component {
                 <AsideTitle>
                   About Early Termination Notices
                 </AsideTitle>
-                <Card>
+                <AsideCard>
                   <Card.Body>
+                    The Hart–Scott–Rodino Antitrust Improvements Act
+                     of 1976 (Public Law 94-435, known commonly as the HSR Act)
+                      is a set of amendments to the antitrust laws of the United States
+                  </Card.Body>
 
-                    {' '}
-                  </Card.Body>
-                </Card>
-                <Card>
+                </AsideCard>
+                <AsideCard>
                   <Card.Body>
-                    This is some more text within a card body.
+                    Under the Congressional ammendement to the
+                    HSR that passed in 2000, The parties may not
+                    close their deal until the waiting period outlined
+                     in the HSR Act has passed, or the government
+                    has granted
+                    {' '}
+                    <strong>Early Termination</strong>
+                    {' '}
+of the waiting period.
+                    <ReferenceLink href="" target="blank"> </ReferenceLink>
                   </Card.Body>
-                </Card>
+                </AsideCard>
               </aside>
             </Col>
           </Row>

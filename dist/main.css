@@ -1,3 +1,4 @@
+@charset "UTF-8";
 [data-simplebar] {
   position: relative;
   flex-direction: column;
@@ -201,21 +202,35 @@ body {
   background-color: #88c2e7 !important;
 }
 
-.masthead {
-  margin: 1em 0.5em;
-  padding: 1em;
-  border-radius: 20px;
-  background: rgba(225, 225, 225, 0.7);
-  border: 1px solid white;
-}
-.masthead .ftc-logo {
-  border-radius: 100%;
-  float: left;
-  margin: 0 1em;
-}
-
 .white-text {
   color: lightgray;
+}
+
+.scroll-container {
+  height: 80vh;
+  margin-bottom: 2em;
+  padding: 1em;
+  text-align: center;
+  position: relative;
+  /* For positioning the pseudo-element */
+  border-radius: 20px;
+  transition: background-color 500ms;
+}
+.scroll-container::after {
+  /* Position the pseudo-element. */
+  content: " ️️⚠️ Scroll Me! ⚠️";
+  position: absolute;
+  position: absolute;
+  top: -1.5em;
+  right: 1em;
+  opacity: 0;
+  transition: opacity 500ms;
+}
+.scroll-container:hover {
+  background-color: lightblue;
+}
+.scroll-container:hover::after {
+  opacity: 1;
 }
 
 /*# sourceMappingURL=main.css.map */
