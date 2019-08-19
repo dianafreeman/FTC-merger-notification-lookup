@@ -1,4 +1,4 @@
-@import './simplebar.scss';
+@import './simplebar.scss'; // simplebar defaults,  for easy cross browser compat
 
 
 $primary: #88c2e7;
@@ -18,4 +18,32 @@ body {
 
 .white-text {
     color: lightgray;
+}
+
+.scroll-container {
+    height: 80vh;
+    margin-bottom: 2em;
+    padding: 1em;
+    text-align: center;
+    position: relative; /* For positioning the pseudo-element */
+    border-radius: 20px;
+
+    transition: background-color 500ms;
+    &::after {
+        /* Position the pseudo-element. */
+        content: " ️️⚠️ Scroll Me! ⚠️";
+        position: absolute;
+        position: absolute;
+        top: -1.5em;
+        right: 1em;
+        opacity: 0;
+        transition: opacity 500ms;
+    }
+
+    &:hover{
+        background-color: lightblue;
+        &::after{
+           opacity: 1;
+        }
+    }
 }
