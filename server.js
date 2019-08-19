@@ -4,6 +4,7 @@ import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
 import '@babel/polyfill';
 import fetch from 'node-fetch';
+import open from 'open';
 
 dotenv.config();
 const app = express();
@@ -18,6 +19,7 @@ app.use(bodyParser.json());
 if (process.env.NODE_ENV === 'testing') {
   console.warn('Listening not enabled in test mode.');
 } else {
+  if (process.env.NODE_ENV === 'auto') open(`http://localhost:${process.env.PORT}`);
   app.listen(process.env.PORT, () => {
     console.log(`Listening on port ${process.env.PORT} in MODE ${process.env.NODE_ENV}`);
   });
@@ -40,3 +42,6 @@ app.get('/search/:term', (req, res) => {
     .then(resp => resp.json())
     .then(body => res.send(body));
 });
+
+
+module.exports = app;
