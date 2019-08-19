@@ -5,18 +5,26 @@ import ReactDOM from 'react-dom';
 import {
   Container, Row, Col, Card, Spinner,
 } from 'react-bootstrap';
-import DataCard from './DataCard.jsx';
-import SearchForm from './SearchForm.jsx';
-import '@babel/polyfill';
+import styled from 'styled-components';
+import DataCard from './components/DataCard.jsx';
+import SearchForm from './components/SearchForm.jsx';
+import FixedHeightContainer from './components/FixedHeightContainer.jsx';
 
-const FixedHeightContainer = ({ children }) => (
-  <div style={{
-    height: 'fit-content', maxHeight: '80vh', overflow: 'scroll', padding: '1em', textAlign: 'center',
-  }}
-  >
-    {children}
-  </div>
-);
+const Masthead = styled(Col)`
+    margin: 1em .5em;
+    padding: 1em;
+    border-radius: 20px;
+    background: rgba(225, 225, 225, 0.7);
+    border: 1px solid white;
+`;
+const Logo = styled.img`
+    border-radius: 100%;
+    float: left;
+    margin: 0 1em;
+`;
+const AsideTitle = styled.h3`
+  font-size: 24px;
+`;
 class App extends Component {
   constructor() {
     super();
@@ -32,21 +40,23 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch('/data')
-      .then(response => response.json())
-      .then(resp => this.setState({ data: resp.data, isLoading: false }))
-      .catch(error => this.setState({ error, isLoading: false }));
+    this.loadDefaultData();
+
+    setTimeout(() => {
+
+    }, 5000);
   }
 
 
   onInputChange(e) {
+    const { error } = this.state;
     this.setState({ searchInput: e.target.value });
+    if (error.length > 1) this.setState({ error: '' });
   }
 
   onSubmitClick(e) {
     e.preventDefault();
     this.setState({ isLoading: true });
-    // eslint-disable-next-line no-undef
     this.updateData();
   }
 
@@ -54,9 +64,21 @@ class App extends Component {
     const { searchInput } = this.state;
     fetch(`/search/${searchInput}`)
       .then(response => response.json())
-      .then(resp => this.setState({ data: resp.data, isLoading: false }));
+      .then((resp) => {
+        if (resp.data.length > 0) {
+          this.setState({ data: resp.data, isLoading: false });
+        } else {
+          this.setState({ error: 'Nothing found. Maybe try another term?', data: [], isLoading: false });
+        }
+      });
   }
 
+  loadDefaultData() {
+    fetch('/data')
+      .then(response => response.json())
+      .then(resp => this.setState({ data: resp.data, isLoading: false }))
+      .catch(error => this.setState({ error, isLoading: false }));
+  }
 
   render() {
     const {
@@ -66,26 +88,23 @@ class App extends Component {
       <main>
         <Container fluid>
           <Row>
-            <Col sm={12} className="masthead">
-              <img
-                className="ftc-logo"
+            <Masthead sm={12}>
+              <Logo
                 src="//logo.clearbit.com/ftc.gov"
                 alt="Federal Trade Comission Logo"
               />
+              <h1>FTC Early Termination Notice Lookup</h1>
               <blockquote>
-                {`The HSR Act specifies certain required 
-                waiting periods, but any filing party may 
-                request the termination of the applicable 
-                HSR waiting period before its end. Such 
-                a request for "early termination" will 
-                be granted only after compliance with the 
-                rules and if both the Federal Trade Commission 
-                and Department of Justice Antitrust Division 
-                have completed their review and determined they 
-                will not take any enforcement action during
-                 the waiting period.`}
+                {'The HSR is the '}
+                <em>Hart Scott Rodino</em>
+                {` act. 
+                  The act requires that parties to certain mergers and acquisitions
+                  submit premerger notification filings and wait before finalizing 
+                  the transaction.`}
+                {'  '}
+                {'Either party can request Early Termination of the up-to-90-day waiting period that must otherwise expire before the parties can complete the merger.'}
               </blockquote>
-            </Col>
+            </Masthead>
           </Row>
           <Row>
             <Col md={8}>
@@ -95,7 +114,7 @@ class App extends Component {
                   searchInput={searchInput}
                   onInputChange={this.onInputChange}
                 />
-                <FixedHeightContainer>
+                <FixedHeightContainer length={data.length}>
                   {isLoading ? <Spinner animation="grow" size="lg" /> : null}
                   {error.length > 0 ? (
                     <h2 className="text-danger">{error}</h2>
@@ -106,13 +125,16 @@ class App extends Component {
                 </FixedHeightContainer>
               </article>
             </Col>
-            <Col lg={4}>
+            <Col md={4}>
               <aside>
-                <h3 className="text-secondary">
+                <AsideTitle>
                   About Early Termination Notices
-                </h3>
+                </AsideTitle>
                 <Card>
-                  <Card.Body>This is some text within a card body.</Card.Body>
+                  <Card.Body>
+
+                    {' '}
+                  </Card.Body>
                 </Card>
                 <Card>
                   <Card.Body>
