@@ -8,7 +8,7 @@ module.exports = function (grunt) {
               configFile: './.eslintrc.js',
               fix: true
             },
-            target: ['Gruntfile.js', 'src/*.jsx'],
+            target: ['Gruntfile.js', 'src/**/*.jsx'],
       },
         sass: {
             dist: {
