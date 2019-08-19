@@ -1,45 +1,10 @@
+/* eslint-disable import/extensions */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Form, Button } from 'react-bootstrap';
-import styled from 'styled-components';
-
-const FormInput = styled(Form.Control)`
-  margin: 0 1em;
-  height: intial;
-  width: 95%;
-  minwidth: 200px;
-  @media screen and (min-width: 768px) {
-    width: 50%;
-  }
-`;
-
-const InputLabel = styled(Form.Label)`
-  font-weight: 700;
-  display: block
-  text-align: center !important
-  @media screen and (min-width: 768px) {
-    width: 25%;
-    display: flex;
-  }
-`;
-
-const MainForm = styled(Form.Group)`
-  position: relative;
-  width: 100%;
-  @media screen and (min-width: 768px) {
-    display: inline-flex;
-  }
-`;
-
-const HiddenBtnText = styled.p`
-  font-size: 0.75em;
-  text-align: center;
-  margin-top: 0.5em;
-`;
-
-const SubmitButton = styled(Button)`
-  width: 100%;
-`;
+import { Form } from 'react-bootstrap';
+import {
+  SubmitButton, HiddenBtnText, MainForm, InputLabel, FormInput,
+} from '../elements/index.jsx';
 
 const SearchForm = ({ onSubmitClick, searchInput, onInputChange }) => {
   const ShowButton = () => (

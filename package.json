@@ -1,12 +1,12 @@
 {
-  "name": "FTC-merger-notification-lookup",
+  "name": "ftc-merger-notification-lookup",
   "version": "0.1.0",
   "private": true,
   "main": "src/index.jsx",
   "scripts": {
     "test": "NODE_ENV=testing ./node_modules/.bin/mocha test/App.spec.js --require @babel/register test/setup.js",
     "server": "npx @babel/node --require @babel/register server.js",
-    "auto": "NODE_ENV=auto npx @babel/node --require @babel/register server.js",
+    "everything": "NODE_ENV=auto npx @babel/node --require @babel/register server.js",
     "dev": "grunt"
   },
   "browserslist": [
@@ -17,7 +17,7 @@
   ],
   "author": "Diana M. Stealkey-Freeman",
   "license": "ISC",
-  "description": "An Early Termination Notice lookup that can be used to search for business mergers whose",
+  "description": "An Early Termination Notice lookup that can be used to search for business mergers whose termination period was ended early.",
   "dependencies": {
     "@babel/polyfill": "^7.4.4",
     "body-parser": "^1.19.0",

@@ -1,30 +1,6 @@
-/* eslint-disable */
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Card, Button } from 'react-bootstrap';
-
-// /* Test Object */
-// const notice = {
-//   type: 'early_termination_notice',
-//   id: '1540964',
-//   attributes: {
-//     title: '20191699: Roper Technologies, Inc.; Robert D. Mattlin',
-//     'transaction-number': '20191699',
-//     'acquired-entities':
-//       'CE Payroll Service, Inc., ComputerEase Software, Inc.',
-//     'acquired-party': 'Robert D. Mattlin',
-//     'acquiring-party': 'Roper Technologies, Inc.',
-//     date: '2019-08-15',
-//     created: '2019-08-16 08:24:13',
-//     updated: '2019-08-16 08:24:13',
-//     tags: [],
-//   },
-//   relationships: [],
-//   meta: [],
-//   links: {
-//     self:
-//       'https://www.ftc.gov/enforcement/premerger-notification-program/early-termination-notices/20191699',
-//   },
-// };
 
 const DataCard = ({ target }) => (
   <Card className="mb-4">
@@ -38,7 +14,7 @@ const DataCard = ({ target }) => (
         }`}
       </Card.Title>
       <Card.Text>
-          The aquired entities include
+          The aquired entity/entities\:
         {`${'    '}${target.attributes['acquired-entities']}`}
       </Card.Text>
       <Button variant="info" href={target.links.self}>
@@ -55,3 +31,7 @@ const DataCard = ({ target }) => (
 );
 
 export default DataCard;
+
+DataCard.propTypes = {
+  target: PropTypes.objectOf('any').isRequired,
+};

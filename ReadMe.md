@@ -1,16 +1,16 @@
-# FTC Mergers & Acquisitions API 
-## Early Termination Notice Lookup 👋
+# FTC Early [Merger] Nofitication Lookup
+####⚠️ Disclaimer ⚠️
 
-One Paragraph of project description goes here
+This app includes summaries of what I believe to be the general gist of FTC guidance on the terminology and concepts related to the [Early Notifications API](https://www.ftc.gov/developer/api/v0/endpoints/hsr-early-termination-notices). I looked at [this page,](https://www.ftc.gov/enforcement/premerger-notification-program) [this page](https://www.ftc.gov/enforcement/premerger-notification-program/early-termination-notices/about-early-termination-notices), and ~~read~~ skimmed [this blog post](https://www.ftc.gov/news-events/blogs/competition-matters/2017/08/getting-sync-hsr-timing-considerations). I have exactly zero legal training, and I did not do any additional research to verify my summaries. Trust/interpret these summaries with caution -- this is a purely a development demonstration.
 
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+These instructions will help you get a copy of the project up and running on your local machine for development and testing purposes.
 
-### Prerequisites
+### Before you dive in
 
-This app doesn't ship with it's own database. Instead, it users an external API request.  To bypass cross-origin request issues in the browser, a really (*really*) simple ExpressAPI handles this request for us. The API is offered by Data.Gov, so you'll need a working API key to make these requests work. 
+This app doesn't ship with it's own database. Instead, it uses an external API request.  To bypass cross-origin request issues in the browser, a really (*really*) simple ExpressAPI handles this request for us. The API is offered by Data.Gov, so you'll need a working API key to make these requests work. 
 
 Request Keys, Node environment settings, and the application port are all set in a `.env` file. Run
 
@@ -42,8 +42,6 @@ npm run server
 
 
 
-
-
 ## Running the tests
 
 Explain how to run the automated tests for this system
@@ -66,15 +64,17 @@ Explain what these tests test and why
 Give an example
 ```
 
-## Deployment
+##  Helpful Tools
 
-Add additional notes about how to deploy this on a live system
+- [Chai Cheatsheat](https://devhints.io/chai)
+
+
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - Express JS
-* [Maven](https://maven.apache.org/) - React JS
-* [ROME](https://rometools.github.io/rome/) - 
+* [ExpressJS](http://www.dropwizard.io/1.0.2/docs/) - Express JS -- proxy server to fetch/receive external API requests
+* [ReactJS](https://maven.apache.org/) - React 
+* [SimpleBar](https://rometools.github.io/rome/) - Cross-browser styling of scrollbar css for synthetic scroll environments
 
 
 
