@@ -1,5 +1,5 @@
 # FTC Early [Merger Clearance] Nofitication Lookup
-####⚠️ Disclaimer ⚠️
+### ⚠️ Disclaimer ⚠️
 
 This app includes summaries of what I believe to be the general gist of FTC guidance on the terminology and concepts related to the [Early Notifications API](https://www.ftc.gov/developer/api/v0/endpoints/hsr-early-termination-notices). I read at [this page,](https://www.ftc.gov/enforcement/premerger-notification-program) [this page](https://www.ftc.gov/enforcement/premerger-notification-program/early-termination-notices/about-early-termination-notices), and [this blog post](https://www.ftc.gov/news-events/blogs/competition-matters/2017/08/getting-sync-hsr-timing-considerations). I have exactly *NO* legal training, and I did not do any legally viable verification of these summaries. **Trust/interpret summaries with caution** -- this is a purely a development demonstration. 
 
