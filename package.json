@@ -4,7 +4,7 @@
   "private": true,
   "main": "src/index.jsx",
   "scripts": {
-    "test": "NODE_ENV=testing ./node_modules/.bin/mocha test/App.spec.js --require @babel/register test/setup.js",
+    "test": "NODE_ENV=testing ./node_modules/.bin/mocha test/*.js --require @babel/register test/setup.js",
     "server": "npx @babel/node --require @babel/register server.js",
     "everything": "NODE_ENV=auto npx @babel/node --require @babel/register server.js",
     "dev": "grunt"
